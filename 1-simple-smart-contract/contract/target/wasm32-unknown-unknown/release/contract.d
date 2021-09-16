@@ -1,0 +1,1 @@
+/Users/lap14205/Documents/home/blockchain_learning/casper/casper-get-started/1-simple-smart-contract/contract/target/wasm32-unknown-unknown/release/contract.wasm: /Users/lap14205/Documents/home/blockchain_learning/casper/casper-get-started/1-simple-smart-contract/contract/src/main.rs

@@ -38,7 +38,9 @@ nctl-assets-setup && nctl-start
 - Get the state root hash and query actual state. 
 <img width="863" alt="Screen Shot 2021-09-17 at 10 38 15" src="https://user-images.githubusercontent.com/13186215/133720400-b37e25d7-0eb6-4939-97b4-def1579caf3b.png">
 
-- Deploy contract and checking it state:
+- Deploy counter contract and checking it state:
+<img width="864" alt="Screen Shot 2021-09-17 at 10 45 53" src="https://user-images.githubusercontent.com/13186215/133720974-a536db3d-3e12-400e-a8e2-89e428108a92.png">
+<img width="858" alt="Screen Shot 2021-09-17 at 10 45 59" src="https://user-images.githubusercontent.com/13186215/133720980-e17a7b95-c288-42e7-88d8-8a3175539e51.png">
 
 
 4. Demonstrate key management concepts by modifying the client in the Multi-Sig tutorial to address one of the additional scenarios

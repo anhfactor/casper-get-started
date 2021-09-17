@@ -26,7 +26,18 @@ I choose "A Counter Contract Tutorial".
 nctl-view-faucet-account
 ```
 <img width="983" alt="Screen Shot 2021-09-15 at 23 59 50" src="https://user-images.githubusercontent.com/13186215/133711067-da08c01c-86ae-47ef-a671-bd915d939620.png">
+- Create local network and running node:  
 
+```
+nctl-assets-setup && nctl-start
+```
+<img width="721" alt="Screen Shot 2021-09-17 at 09 17 56" src="https://user-images.githubusercontent.com/13186215/133715043-d7e11384-a0c1-454d-9f28-5c9cd882783e.png">
+- Get the state root hash:  
+
+```
+casper-client get-state-root-hash --node-address http://localhost:11101
+```
+<img width="837" alt="Screen Shot 2021-09-16 at 00 53 33" src="https://user-images.githubusercontent.com/13186215/133716829-1b26db04-51df-4a76-99df-686f64ec2b1f.png">
 
 4. Demonstrate key management concepts by modifying the client in the Multi-Sig tutorial to address one of the additional scenarios
 5. Learn to transfer tokens to an account on the Casper Testnet. Check out this documentation.

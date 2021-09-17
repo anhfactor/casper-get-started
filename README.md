@@ -130,4 +130,9 @@ npm run start:scenario-concept
 
 My testnet account: https://testnet.cspr.live/account/018375a8c5a3e58d257c07119269e560a1df2755c519de6a5ba136ead73ac23d11
 
+- To transfer CSPR from account to another, go to https://testnet.cspr.live/transfer and make a transfer action
+<img width="828" alt="Screen Shot 2021-09-17 at 12 48 24" src="https://user-images.githubusercontent.com/13186215/133731144-ec0dd7eb-9fcf-445b-acc4-c91a0a7bcb32.png">
+
+- Transfer logs: https://testnet.cspr.live/deploy/a605d2ee5f5ae8bbeb72b7de24ee49aa42956f6efb32a3507f3def59bfaff46c
+
 7. Learn to Delegate and Undelegate on the Casper Testnet. Check out these instructions.

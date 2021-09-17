@@ -117,7 +117,7 @@ npm run start:scenario-concept
 
 <img width="697" alt="Screen Shot 2021-09-17 at 12 07 21" src="https://user-images.githubusercontent.com/13186215/133728003-98637b1c-30dd-4ad6-9045-7157d5218fca.png">
 
-5. Learn to transfer tokens to an account on the Casper Testnet. Check out this documentation.
+5. Learn to transfer tokens to an account on the Casper Testnet. 
 - First create casper account testnet in https://testnet.cspr.live/
 <img width="1231" alt="Screen Shot 2021-09-17 at 12 29 39" src="https://user-images.githubusercontent.com/13186215/133730449-02176500-920c-4fd5-a23c-65cfd9d4cd1e.png">
 
@@ -135,4 +135,5 @@ My testnet account: https://testnet.cspr.live/account/018375a8c5a3e58d257c071192
 
 - Transfer logs: https://testnet.cspr.live/deploy/a605d2ee5f5ae8bbeb72b7de24ee49aa42956f6efb32a3507f3def59bfaff46c
 
-7. Learn to Delegate and Undelegate on the Casper Testnet. Check out these instructions.
+6. Learn to Delegate and Undelegate on the Casper Testnet. 
+- To delegate go to and choose a validator: https://testnet.cspr.live/delegate-stake. 

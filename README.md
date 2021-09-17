@@ -39,8 +39,13 @@ nctl-assets-setup && nctl-start
 <img width="863" alt="Screen Shot 2021-09-17 at 10 38 15" src="https://user-images.githubusercontent.com/13186215/133720400-b37e25d7-0eb6-4939-97b4-def1579caf3b.png">
 
 - Deploy counter contract and checking it state:
-<img width="864" alt="Screen Shot 2021-09-17 at 10 45 53" src="https://user-images.githubusercontent.com/13186215/133720974-a536db3d-3e12-400e-a8e2-89e428108a92.png">
-<img width="858" alt="Screen Shot 2021-09-17 at 10 45 59" src="https://user-images.githubusercontent.com/13186215/133720980-e17a7b95-c288-42e7-88d8-8a3175539e51.png">
+<img width="1235" alt="Screen Shot 2021-09-17 at 10 32 00" src="https://user-images.githubusercontent.com/13186215/133722394-307d2002-de04-4eff-b739-48c1f519cccd.png">
+
+- The counter is currently set to 1
+<img width="853" alt="Screen Shot 2021-09-17 at 11 03 01" src="https://user-images.githubusercontent.com/13186215/133722471-ba38b9f9-753a-481c-8032-42d838eebe30.png">
+
+- After increment the counter again, the counter is set to 2. 
+ <img width="1426" alt="Screen Shot 2021-09-17 at 11 07 23" src="https://user-images.githubusercontent.com/13186215/133722689-11689f8b-49c2-40b9-bd4d-cc01d55589f1.png">
 
 
 4. Demonstrate key management concepts by modifying the client in the Multi-Sig tutorial to address one of the additional scenarios

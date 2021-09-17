@@ -47,7 +47,77 @@ nctl-assets-setup && nctl-start
 - After increment the counter again, the counter is set to 2. 
  <img width="1426" alt="Screen Shot 2021-09-17 at 11 07 23" src="https://user-images.githubusercontent.com/13186215/133722689-11689f8b-49c2-40b9-bd4d-cc01d55589f1.png">
 
+3. Demonstrate key management concepts by modifying the client in the Multi-Sig tutorial to address one of the additional scenarios. 
+- First clone the keys management project: https://github.com/casper-ecosystem/keys-manager
+- Create .env and run npm install
+- Create an extension name "scenario-concept.js":
+```
+const keyManager = require('./key-manager');
 
-4. Demonstrate key management concepts by modifying the client in the Multi-Sig tutorial to address one of the additional scenarios
+(async function () {
+    // 1. Weight of `fullAccount` to 2
+    // 2. Key Management Threshold to 2
+    // 3. Deploy Threshold to 1
+    // 4. First new key with weight 1 (deploy key)
+
+    let deploy;
+
+    // 0. Initial state of the account.
+    // There should be only one associated key (faucet) with weight 1.
+    // Deployment Threshold should be set to 1.
+    // Key Management Threshold should be set to 1.
+    let masterKey = keyManager.randomMasterKey();
+    let fullAccount = masterKey.deriveIndex(1);    // deployment and management
+    let deployAccount = masterKey.deriveIndex(2);    // only for deployment
+
+    console.log("\n0.1 Fund main account.\n");
+    await keyManager.fundAccount(fullAccount);
+    await keyManager.printAccount(fullAccount);
+    
+    console.log("\n[x]0.2 Install Keys Manager contract");
+    deploy = keyManager.keys.buildContractInstallDeploy(fullAccount);
+    await keyManager.sendDeploy(deploy, [fullAccount]);
+    await keyManager.printAccount(fullAccount);
+
+    // 1. Set fullAccount's weight to 2
+    console.log("\n1. Set faucet's weight to 2\n");
+    deploy = keyManager.keys.setKeyWeightDeploy(fullAccount, fullAccount, 2);
+    await keyManager.sendDeploy(deploy, [fullAccount]);
+    await keyManager.printAccount(fullAccount);
+    
+    // 2. Set Keys Management Threshold to 2.
+    console.log("\n2. Set Keys Management Threshold to 2\n");
+    deploy = keyManager.keys.setKeyManagementThresholdDeploy(fullAccount, 2);
+    await keyManager.sendDeploy(deploy, [fullAccount]);
+    await keyManager.printAccount(fullAccount);
+    
+    // 3. Set Deploy Threshold to 1.
+    console.log("\n3. Set Deploy Threshold to 1.\n");
+    deploy = keyManager.keys.setDeploymentThresholdDeploy(fullAccount, 1);
+    await keyManager.sendDeploy(deploy, [fullAccount]);
+    await keyManager.printAccount(fullAccount);
+    
+    // 4. Add first new key with weight 1 (first account).
+    console.log("\n4. Add first new key with weight 1.\n");
+    deploy = keyManager.keys.setKeyWeightDeploy(fullAccount, deployAccount, 1);
+    await keyManager.sendDeploy(deploy, [fullAccount]);
+    await keyManager.printAccount(fullAccount);
+    
+})();
+```
+And add scripts in package.json. 
+```
+start:scenario-concept": "node -r dotenv/config ./src/scenario-concept.js"
+```
+- Then run command:  
+```
+npm run start:scenario-concept
+```
+<img width="685" alt="Screen Shot 2021-09-17 at 12 07 06" src="https://user-images.githubusercontent.com/13186215/133727941-15f76048-e1c1-4aa7-8af8-9820df5ff0e7.png">
+
+<img width="697" alt="Screen Shot 2021-09-17 at 12 07 21" src="https://user-images.githubusercontent.com/13186215/133728003-98637b1c-30dd-4ad6-9045-7157d5218fca.png">
+
+
+
 5. Learn to transfer tokens to an account on the Casper Testnet. Check out this documentation.
 6. Learn to Delegate and Undelegate on the Casper Testnet. Check out these instructions.
